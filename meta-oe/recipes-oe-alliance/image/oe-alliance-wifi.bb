@@ -57,6 +57,7 @@ RDEPENDS_${PN} = "\
     ${@bb.utils.contains("MACHINEBUILD", "spycat4kcombo", "enigma2-plugin-drivers-network-usb-qca9377", "", d)} \
     ${@bb.utils.contains("MACHINE", "u5", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
     ${@bb.utils.contains("MACHINE", "u52", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
+    ${@bb.utils.contains("MACHINE", "cc1", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
     "
 
 RDEPENDS_${PN}_remove_odroidc2 = "enigma2-plugin-drivers-network-usb-rtl8192cu"

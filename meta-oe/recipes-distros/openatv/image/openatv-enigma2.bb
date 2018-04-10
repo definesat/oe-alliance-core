@@ -26,7 +26,7 @@ RRECOMMENDS_${PN} = " \
     enigma2-plugin-extensions-volume-adjust \
     enigma2-plugin-extensions-atilehd \
     enigma2-plugin-systemplugins-videotune \
-    ${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "", "enigma2-plugin-systemplugins-videoenhancement", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "enigma2-plugin-systemplugins-videoenhancement", "",  d)} \
     enigma2-plugin-systemplugins-softwaremanager \
     enigma2-plugin-systemplugins-hotplug \
     enigma2-plugin-extensions-mediaplayer \
@@ -59,3 +59,4 @@ RRECOMMENDS_${PN}_append_bre2zet2c = " enigma2-plugin-systemplugins-satipclient"
 RRECOMMENDS_${PN}_append_bre2ze4k = " enigma2-plugin-systemplugins-satipclient"
 RRECOMMENDS_${PN}_append_bre2ze = " enigma2-plugin-systemplugins-satipclient"
 RRECOMMENDS_${PN}_append_dm900 = " enigma2-plugin-systemplugins-fsblupdater"
+RRECOMMENDS_${PN}_append_clap4k = "stb-kodi-cc1 kodi-addons-meta kodi-platform kodi-addon-pvr-vuplus kodi-addon-pvr-stalker enigma2-plugin-extensions-subssupport enigma2-plugin-extensions-kodi"

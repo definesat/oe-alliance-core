@@ -19,7 +19,7 @@ PR[vardepsexclude] += "DATE"
 
 BRANCH="master"
 
-SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git;branch=${BRANCH}"
+SRC_URI="git://github.com/definesat/branding-module.git;protocol=git;branch=${BRANCH}"
 
 S = "${WORKDIR}/git"
 
@@ -146,6 +146,8 @@ do_configure_prepend() {
         fi
     elif [ "${BRAND_OEM}" = "fulan" ]; then
         DRIVERSDATE=`grep "SRCDATE = " ${OEA-META-FULAN-BASE}/recipes-drivers/fulan-dvb-modules-${MACHINE}.bb | cut -b 12-19`
+    elif [ "${BRAND_OEM}" = "clap" ]; then
+        DRIVERSDATE=`grep "SRCDATE = " ${OEA-META-CLAP-BASE}/recipes-drivers/clap-dvb-modules-${MACHINE}.bb | cut -b 12-19`        
     else
         DRIVERSDATE='N/A'
     fi

@@ -8,10 +8,10 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
 BRANCH = "master"
-SRCREV = "99553b60dacce7d245fc9f46ed31cf42d68dd161"
-PV = "svn8631"
-PKGV = "svn8631"
-SRC_URI = "git://git.cuci.nl/oscam;protocol=git;branch=${BRANCH};tag=${SRCREV}"
+SRCREV = "${AUTOREV}"
+PV = "${IMAGE_VERSION}+git${SRCPV}"
+PKGV = "${IMAGE_VERSION}+git${GITPKGV}"
+SRC_URI = "git://github.com/zhtq/oscam-svn.git;protocol=git;branch=${BRANCH}"
 PR = "r0"
 
 DEPENDS = "libusb openssl"
@@ -50,5 +50,5 @@ do_install() {
     install -d ${D}/etc/tuxbox/config/oscam
     install -m 0644 ${WORKDIR}/oscam.* ${D}/etc/tuxbox/config/oscam/
     install -d ${D}/usr/bin
-    install -m 0755 ${S}/oscam ${D}/usr/bin
+    install -m 0755 ${WORKDIR}/build/oscam ${D}/usr/bin
 }

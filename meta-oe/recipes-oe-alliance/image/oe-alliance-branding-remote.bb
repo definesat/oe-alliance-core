@@ -14,7 +14,7 @@ PKGV = "${IMAGE_VERSION}+git${GITPKGV}"
 
 BRANCH="master"
 
-SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git;branch=${BRANCH}"
+SRC_URI="git://github.com/definesat/branding-module.git;protocol=git;branch=${BRANCH}"
 
 S = "${WORKDIR}/git"
 
