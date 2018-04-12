@@ -7,6 +7,8 @@ SRC_URI_remove = "file://e2player.patch \
 "
 
 SRC_URI_append = "file://hiplayer.patch \
+                 file://hiadp.a \
+                 file://hiplayer.a \
 "
 
 DEPENDS += "clap-libs-${MACHINE}"
@@ -17,6 +19,12 @@ RPROVIDES_${PN} += "kodi"
 
 RDEPENDS_${PN} += "clap-libs-${MACHINE}"
 RDEPENDS_${PN} += "clap-opengl-${MACHINE}"
+
+do_configure_append() {
+        install -d ${D}${libdir}
+        install -m 0755 ${WORKDIR}/hiadp.a      ${WORKDIR}/git/xbmc/linux/hisi/
+        install -m 0755 ${WORKDIR}/hiplayer.a   ${WORKDIR}/git/xbmc/cores/hiplayer/
+}
 
 EXTRA_OECONF += " \
     --with-platform=clap-cortexa15 \
