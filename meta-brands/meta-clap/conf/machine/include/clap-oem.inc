@@ -37,7 +37,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     clap-libreader-${MACHINE} \
 "
 
-MACHINE_FEATURES += "videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc"
+MACHINE_FEATURES += "nowifi videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc"
 
 IMAGE_CLASSES  += "clap-emmc_image"
 IMAGE_FSTYPES += "clapemmc"
