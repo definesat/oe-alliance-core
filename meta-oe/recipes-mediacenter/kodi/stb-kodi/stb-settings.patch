@@ -9,7 +9,6 @@ brcmstb-settings
  addons/skin.estuary/xml/Home.xml         |  2 +-
  lib/libdvd/Makefile.in                   | 14 +++++-----
  system/settings/settings.xml             | 12 +++-----
- tools/Linux/kodi.sh.in                   | 38 +++++++++++++++++++------
  tools/depends/target/libdvdcss/Makefile  |  4 +--
  tools/depends/target/libdvdnav/Makefile  |  4 +--
  tools/depends/target/libdvdread/Makefile |  4 +--
@@ -124,67 +123,6 @@ index 301e7276e5..2e9e5ce5d6 100644
              </options>
            </constraints>
            <control type="list" format="integer" />
-diff --git a/tools/Linux/kodi.sh.in b/tools/Linux/kodi.sh.in
-index 0a00a32034..235f3a6073 100644
---- a/tools/Linux/kodi.sh.in
-+++ b/tools/Linux/kodi.sh.in
-@@ -25,13 +25,33 @@ prefix="@prefix@"
- exec_prefix="@exec_prefix@"
- datarootdir="@datarootdir@"
- LIBDIR="@libdir@"
--CRASHLOG_DIR=${CRASHLOG_DIR:-$HOME}
--USERDATA_DIR="${HOME}/.${bin_name}"
- 
-+export KODI_TEMP="/tmp/kodi"
-+CRASHLOG_DIR=${CRASHLOG_DIR:-$KODI_TEMP}
- 
- # Workaround for high CPU load with nvidia GFX
- export __GL_YIELD=USLEEP
- 
-+check_media_hdd() {
-+    [ -e /proc/mounts ] || return 0
-+
-+    exec 9<&0 < /proc/mounts
-+    while read DEV MTPT REST; do
-+        case $DEV in
-+            /dev/sd[a-z][0-9])
-+            if [ "$MTPT" == "/media/hdd" ]; then
-+                export HOME="$MTPT"
-+                break
-+            fi
-+            ;;
-+        esac
-+    done
-+    exec 0<&9 9<&-
-+}
-+
-+check_media_hdd
-+USERDATA_DIR="${HOME}/.${bin_name}"
-+
- # Fix wasting RAM due to fragmentation
- export MALLOC_MMAP_THRESHOLD_=131072
- 
-@@ -165,13 +185,13 @@ do
-   LOOP=0
-   "$LIBDIR/${bin_name}/${bin_name}.bin" $SAVED_ARGS
-   RET=$?
--  if [ $(( $RET == 65 )) = "1" ]
--  then # User requested to restart app
--    LOOP=1
--  elif [ $(( ($RET >= 131 && $RET <= 136) || $RET == 139 )) = "1" ]
--  then # Crashed with core dump
--    print_crash_report
--  fi
-+#  if [ $(( $RET == 65 )) = "1" ]
-+#  then # User requested to restart app
-+#    LOOP=1
-+#  elif [ $(( ($RET >= 131 && $RET <= 136) || $RET == 139 )) = "1" ]
-+#  then # Crashed with core dump
-+#    print_crash_report
-+#  fi
- done
- 
- exit $RET
 diff --git a/tools/depends/target/libdvdcss/Makefile b/tools/depends/target/libdvdcss/Makefile
 index 518ce2b101..7e51e7974d 100644
 --- a/tools/depends/target/libdvdcss/Makefile
