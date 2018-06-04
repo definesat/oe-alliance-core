@@ -1,7 +1,7 @@
 # We know about rtc
 include conf/machine/include/build-extras.inc
 
-DISTRO_FEATURES_remove = "x11 wayland directfb gtk-directfb"
+DISTRO_FEATURES_remove = "x11 wayland"
 
 BRAND_OEM = "clap"
 
@@ -35,6 +35,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     clap-hihalt-${MACHINE} \
     clap-reader-${MACHINE} \
     clap-libreader-${MACHINE} \
+    clap-blindscan-${MACHINE} \
 "
 
 MACHINE_FEATURES += "nowifi videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc"

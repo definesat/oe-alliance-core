@@ -1,9 +1,26 @@
+# oscam.server generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r11384
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.server.txt
+
+[reader]
+label                         = emulator
+protocol                      = emu
+device                        = emulator
+caid                          = 090F,0500,1801,0604,2600,FFFF,0E00,4AE1,1010
+detect                        = cd
+ident                         = 090F:000000;0500:000000,023800,021110,007400,007800;1801:000000,007301,001101,002111;0604:000000;2600:000000;FFFF:000000;0E00:000000;4AE1:000011,000014,0000FE;1010:000000
+group                         = 1
+emmcache                      = 2,1,2,1
+emu_auproviders               = 0604:010200;0E00:000000;4AE1:000011,000014,0000FE;1010:000000
+
 [reader]
 label                         = card
 enable                        = 1
 protocol                      = internal
 device                        = /dev/sci0
+cacheex_allow_request         = 1
+boxkey                        = B1B2B3B4B5B6B7B8
+rsakey                        = AB722A8CAA9F58DE0D1CBB6FF329C961ED9DD759B103082D1BAE64C27A861D42E7F631891C2660EFA57484F80BBB4E0E8249A8368E31BD3FFC369FBE95160528
+deskey                        = 4A1123B14599CF10211B18CD02D4A11F0756ABB44531AA23CDF255A1134CF17657D93175139889C8A3365B18C28345E219F73508C3DAE128E719B5D88DE323A4A7ECD2158B4259C51349832EFBAD7CD3372578E3721953D97A15A4C7154932E863D596A727D8B268425E1A8C41698EE8C2AB3729D3CF93A749D333C2EB71D314
 detect                        = cd
 group                         = 1
-emmcache                      = 1,3,15
-audisabled                    = 0
+

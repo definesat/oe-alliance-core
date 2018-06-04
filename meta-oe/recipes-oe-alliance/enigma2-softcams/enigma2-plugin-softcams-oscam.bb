@@ -29,11 +29,11 @@ CAMSTOP = "kill \`cat /tmp/oscam.pid\` 2> /dev/null"
 SRC_URI += " \
     file://oscam.conf \
     file://oscam.server \
-    file://oscam.srvid \
+    file://oscam.srvid2 \
     file://oscam.user \
-    file://oscam.provid"
+    file://oscam.ccache"
 
-CONFFILES = "/etc/tuxbox/config/oscam/oscam.conf /etc/tuxbox/config/oscam/oscam.server /etc/tuxbox/config/oscam/oscam.srvid /etc/tuxbox/config/oscam/oscam.user /etc/tuxbox/config/oscam/oscam.provid"
+CONFFILES = "/etc/tuxbox/config/oscam/oscam.conf /etc/tuxbox/config/oscam/oscam.server /etc/tuxbox/config/oscam/oscam.srvid2 /etc/tuxbox/config/oscam/oscam.user /etc/tuxbox/config/oscam/oscam.ccache"
 
 FILES_${PN} = "/usr/bin/oscam /etc/tuxbox/config/oscam/* /etc/init.d/softcam.oscam"
 

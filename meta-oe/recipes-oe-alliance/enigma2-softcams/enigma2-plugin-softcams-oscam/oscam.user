@@ -1,6 +1,10 @@
+# oscam.user generated automatically by Streamboard OSCAM 1.20-unstable_svn SVN r11384
+# Read more: http://www.streamboard.tv/svn/oscam/trunk/Distribution/doc/txt/oscam.user.txt
+
 [account]
-user 			= dvbapiau
-pwd 			=
-disabled 		= 0
-group 			= 1
-au 				= 1
+user                          = dvbapiau
+description                   = dvbapi
+keepalive                     = 1
+au                            = 1
+group                         = 1
+
