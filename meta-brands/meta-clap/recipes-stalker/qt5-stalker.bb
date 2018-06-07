@@ -12,7 +12,7 @@ DEPENDS = "qtbase qtsensors qtwebkit"
 EXCLUDE_FROM_WORLD = "1"
 
 SRC_URI = "git://git@github.com/definesat/qtstalkerv2.git;protocol=ssh"
-SRCREV = "842def6e6fe330bc489d322002681db29279adc1"
+SRCREV = "f904a702b3650726c8e42ad3883a248e8108ab05"
 S = "${WORKDIR}/git"
 
 DEPENDS += "clap-libs-${MACHINE}"
