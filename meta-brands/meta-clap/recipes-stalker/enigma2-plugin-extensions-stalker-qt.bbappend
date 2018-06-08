@@ -2,5 +2,5 @@ VER = "-clap"
 
 SRC_URI = "git://github.com/definesat/e2plugins.git;protocol=git"
 
-SRCREV = "343e5c0f20c6ddfa1de9fe0282c7a9ee7605eb0b"
+SRCREV = "37303b45503b10bf3a34144269207424012aa8a2"
 
