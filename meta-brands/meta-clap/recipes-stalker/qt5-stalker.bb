@@ -6,13 +6,13 @@ LICENSE = "CLOSED"
 
 PV = "${SRCPV}"
 
-DEPENDS = "qtbase qtsensors qtwebkit"
+DEPENDS = "qtbase qtsensors qtwebkit boost"
 
 # Depends on gles2 enabled and that's not default configuration
 EXCLUDE_FROM_WORLD = "1"
 
 SRC_URI = "git://git@github.com/definesat/qtstalkerv2.git;protocol=ssh"
-SRCREV = "f904a702b3650726c8e42ad3883a248e8108ab05"
+SRCREV = "d468a7810596afc5cf61a50cf659db130c97454e"
 S = "${WORKDIR}/git"
 
 DEPENDS += "clap-libs-${MACHINE}"

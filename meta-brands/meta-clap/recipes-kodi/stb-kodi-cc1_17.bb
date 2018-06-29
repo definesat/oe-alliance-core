@@ -1,6 +1,6 @@
 require recipes-mediacenter/kodi/stb-kodi_${PV}.bb
 
-SRCDATE = "20180622"
+SRCDATE = "20180629"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
@@ -12,8 +12,8 @@ SRC_URI_append = "http://define-sw.dyndns.tv:8082/clap/hiplayer_${SRCDATE}.tar.g
                   file://hiplayer.patch \
 "
 
-SRC_URI[md5sum] = "adddbd785bd1553a42fd0cd0ad739f61"
-SRC_URI[sha256sum] = "b9e4bd080cadc4f76b5ebd9be93a9ecf75576d3025e2ae85126b6f0597046670"
+SRC_URI[md5sum] = "849d597bc4c65eac0bc30641ba267434"
+SRC_URI[sha256sum] = "abee6c9c52748ca4410c6610df7b7d7c731995b6cab294d2c554d71127a17940"
 
 DEPENDS += "clap-libs-${MACHINE}"
 PROVIDES += "virtual/kodi"
