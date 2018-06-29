@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRCDATE = "20180605"
+SRCDATE = "20180629"
 
 PV = "${SRCDATE}"
 PR = "r0"
@@ -23,7 +23,7 @@ do_package_qa() {
 
 FILES_${PN}  = "${bindir}/clap-blindscan"
 
-SRC_URI[md5sum] = "14f704f667912157fa9ec55f77ec6262"
-SRC_URI[sha256sum] = "60c78481d8acc45e7ff5affbec90c30894d2fd39c4741eff5762ecac8794fbff"
+SRC_URI[md5sum] = "6690b29d7d0a43e8ef98b85b2ecb5b58"
+SRC_URI[sha256sum] = "f6d28315f926fecaf813b0de7850b6c0bfe9e16c99cecd6056657d9556edffd0"
 
 

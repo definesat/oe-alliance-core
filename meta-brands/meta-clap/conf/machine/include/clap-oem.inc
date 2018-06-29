@@ -75,6 +75,7 @@ PREFERRED_PROVIDER_virtual/egl = "clap-opengl-${MACHINE}"
 PREFERRED_PROVIDER_virtual/kernel = "linux-clap"
 PREFERRED_RPROVIDER_showiframe = "clap-showiframe-${MACHINE}"
 PREFERRED_RPROVIDER_aio-grab = "clap-grab-${MACHINE}"
+PREFERRED_VERSION_directfb = "1.7.7"
 
 IMAGE_CMD_clapemmc_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
