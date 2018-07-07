@@ -36,6 +36,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     clap-reader-${MACHINE} \
     clap-libreader-${MACHINE} \
     clap-blindscan-${MACHINE} \
+    clap-partitions-${MACHINE} \
 "
 
 MACHINE_FEATURES += "nowifi videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc"
@@ -79,13 +80,16 @@ PREFERRED_VERSION_directfb = "1.7.7"
 
 IMAGE_CMD_clapemmc_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
-    mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.emmc.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.sdcard.img; \
+    cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.ext4 ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/rootfs.ext4; \
     cd ${IMAGE_ROOTFS}; \
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
     mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
     bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
+    cp ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE} ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${KERNEL_FILE}; \
     echo ${IMAGE_VER_STRING} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+    cd ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions; \
+    mkupdate -s 00000003-00000001-01010101 -f ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/emmc_partitions.xml -d ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/usb_update.bin; \    
     cd ${DEPLOY_DIR_IMAGE}; \
     zip ${IMAGE_NAME}_mmc.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
