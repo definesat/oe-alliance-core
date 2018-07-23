@@ -6,7 +6,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(cc1)$"
 
-SRCDATE = "20180719"
+SRCDATE = "20180723"
 
 PV = "${SRCDATE}"
 PR = "r0"
@@ -29,5 +29,5 @@ do_package_qa() {
 
 FILES_${PN}  = "${bindir}/libreader"
 
-SRC_URI[md5sum] = "13d0b0ce911625184cc17630ad44a6c4"
-SRC_URI[sha256sum] = "b1441303a22d5c47f964d63f3b54f6280a85f8c3ea3335ed5e812a7cac65f849"
+SRC_URI[md5sum] = "fe4069b5d7eb8c2ddcc59e9935f180dd"
+SRC_URI[sha256sum] = "f626a9c4f7abdb12c6e9f686bd576933111fcff729a5411233f367e3ac00b269"
