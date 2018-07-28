@@ -4,7 +4,7 @@ PRIORITY = "optional"
 LICENSE = "CLOSED"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-SRCDATE = "20180606"
+SRCDATE = "20180728"
 
 PV = "${SRCDATE}"
 PR = "r0"
@@ -23,7 +23,7 @@ do_package_qa() {
 
 FILES_${PN}  = "${bindir}/hihalt"
 
-SRC_URI[md5sum] = "7d5dae625f9c5ad7c13e8099f10455bf"
-SRC_URI[sha256sum] = "249559623db2eb77f347f14d9a9b0be44b40c5ee797d4a304c930dd2419f84fe"
+SRC_URI[md5sum] = "d1f40acc4f2fe1cc903b230434492ffa"
+SRC_URI[sha256sum] = "2d207035997ab422e699d2db9a1c25220a6c12cdc278222b0af4762b2e116cb2"
 
 
